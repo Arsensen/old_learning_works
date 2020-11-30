@@ -1,0 +1,295 @@
+body
+{
+    float:none;
+    margin: 0 auto;
+    max-width: 1900px;
+    
+    font-family: sans-serif, Arial, Helvetica;
+}
+
+
+header
+{
+    text-align: center;
+    background-color: silver;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 80%;
+    margin: 0px auto;
+}
+
+header a
+{
+    padding: 20px;
+    background-color: darkgray;
+    text-decoration: none;
+}
+
+header a:hover
+{
+    opacity: 0.7;
+    background-color: blue;
+
+}
+
+footer
+{
+    text-align: center;
+    background-color: silver;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 80%;
+    margin: 50px auto 0;
+}
+
+
+
+main
+{
+    width: 75%;
+    margin: 0 auto;
+    padding: 25px 25px;
+    background-color: gainsboro;
+    min-width: 650px;
+}
+
+.title
+{
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+article
+{
+    margin-top: 20px;
+}
+
+article section div
+{
+    margin-top: 10px;
+}
+
+/* ПЕРЕКЛЮЧАТЕЛИ БЛОЧНЫХ ЭЛЕМЕНТОВ*/
+
+main > input
+{
+    display: none;        
+}
+
+
+.blocks 
+{
+    margin-right: 2em;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: url('./images/list2.png') no-repeat 50% 0px;    
+    background-size: cover;        
+    cursor: pointer;
+    opacity: 0.1;
+}
+
+.inlines 
+{
+    margin-right: 2em;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: url('./images/pause2.png') no-repeat 50% 0px;    
+    background-size: cover;        
+    cursor: pointer;
+    opacity: 0.1;
+}
+
+.inlines:hover,
+#inline_block:checked ~ .inlines
+{
+    opacity: 1;
+}
+
+
+.blocks:hover,
+#block:checked ~ .blocks
+{
+    opacity: 1;
+}
+
+
+#inline_block:checked ~ article section
+{
+    width: 250px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    padding: 0 auto;
+    text-align: left;
+    vertical-align: text-top;
+    margin-bottom: 20px;
+    margin-right: 1%;
+    
+}
+
+
+
+#block:checked ~ article section
+{
+    
+    display: block;
+    text-overflow: ellipsis;
+    padding: 0px auto;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 50px;
+    min-width: 650px;
+    height: 350px;
+}
+
+#block:checked ~ .article section > div:first-of-type
+{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    
+    margin-left: 50px;
+    
+}
+
+#block:checked ~ .article section div .short_info
+{
+    width: 450px;
+}
+
+#block:checked ~ .article section .Description
+{
+    max-width:350px;
+    max-height: 450px;
+    float: right;    
+}
+
+
+#block:checked ~ article section img
+{
+    float: left;
+}
+
+
+
+
+/*БЛОК С КОТОМ В BLOCK*/
+
+
+
+
+
+/*БЛОК С КОТОМ В INLINE-BLOCK*/
+
+/* ФОТО КОТА*/
+
+img 
+{
+    width: 250px;
+    min-height: 350px;
+    border-radius: 2px;
+}
+
+img:hover
+{
+    opacity: 0.7;
+}
+
+img:active
+{
+    transform: scale(2);
+    opacity: 1;
+}
+
+/* ИМЯ, ОПИСАНИЕ, ДИРЕКТОРИЯ*/
+
+.names
+{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.names a:hover
+{
+    color: red;
+}
+
+.paths 
+{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: xx-small;  
+    color: gray;
+    margin-top: 0;
+}
+
+.paths span
+{
+    text-decoration: underline;
+}
+
+.prices
+{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: red;
+    font-size: large;
+    font-weight: bold;
+
+}
+
+.prices span
+{
+    margin: 20px;
+    font-size: small;
+    text-decoration: line-through;
+    color: gray;
+
+}
+
+.article .Description
+{
+    font-size: x-small;
+}
+
+/*ЗВЕЗДЫ*/
+
+.rating_block 
+    {
+        width: 125px;
+        height: 25px;
+        
+    }
+
+.rating_block input[type="radio"] 
+    {
+        display: none;
+    }
+
+.label_rating 
+    {
+        float: right;
+        display: block;
+        width: 25px;
+        height: 25px;
+        background: url('./images/hollowStar.png') no-repeat 50% 0px;    
+        background-size: cover;
+        border-radius: 2px;
+        cursor: pointer;
+    }
+    
+  
+.rating_block .label_rating:hover ~ .label_rating, 
+.rating_block input[type="radio"]:checked ~ .label_rating
+    {
+        background-image: url('./images/rating.png');
+        background-size: cover;
+        
+    }
+
+

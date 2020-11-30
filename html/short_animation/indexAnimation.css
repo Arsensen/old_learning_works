@@ -1,0 +1,191 @@
+/*
+    НЕБО, смена дня и ночи, это все здесь
+*/
+
+@keyframes dayWasting
+{
+    from
+    {
+        background: skyblue;
+        box-shadow: 0 -400px 300px -300px steelblue inset;
+    }
+    25% 
+    {
+        background: darkslateblue;
+        box-shadow: 0 -400px 300px -300px orangered inset;
+    }
+    50% 
+    {
+        background: darkslateblue;
+        box-shadow: 0 -400px 300px -300px transparent inset;
+    }
+    75% 
+    {
+        background: darkslateblue;
+        box-shadow: 0 -400px 300px -300px orangered inset;
+    }
+    to
+    {
+        background: skyblue;
+        box-shadow: 0 -400px 300px -300px steelblue inset;
+    }
+}
+
+.box_front 
+{
+    animation: dayWasting 60s linear infinite;
+}
+
+
+
+
+
+/*
+    КОРАБЛЬ
+*/
+
+@keyframes shipMoving
+{
+    from {transform: translate(100px, 0px);}
+    to {transform: translate(-610px, 0px);}
+
+}
+
+.ship{
+    animation: shipMoving 19s linear infinite;
+    
+}
+
+
+
+
+
+
+
+/*
+    ДЫМОК
+*/
+@keyframes smokeFading
+{
+    from {transform: translate(0px, 0px);
+        visibility: visible;
+        opacity: 1;}
+    50% {transform: translateY(-10px) scale(1.5)}
+    to {transform: translateY(-20px) scale(2);
+        opacity: 0;}
+}
+
+.smoke-1
+{
+    animation: smokeFading 4.5s linear infinite;
+    animation-delay: 3s;
+    visibility: hidden;
+}
+
+.smoke-2
+{
+    animation: smokeFading 4.5s linear infinite;
+    animation-delay: 1.5s;
+    visibility: hidden;
+}
+
+.smoke-3
+{
+    animation: smokeFading 4.5s linear infinite;
+    visibility: hidden;
+}
+
+
+
+
+
+
+
+/*
+    СОЛНЦЕ
+*/
+
+@keyframes sunSpinning
+{
+    to {transform: rotate(1turn);}
+}
+
+.sun-wrapper
+{
+    animation: sunSpinning 60s linear infinite;
+}
+
+
+.sun
+{
+    animation: sunSpinning 8s linear infinite;
+    background-image: url('./sunshine.jpg');
+    background-size: 100%;
+}
+
+
+
+
+
+
+/*
+    ОБЛАКА
+*/
+
+
+@keyframes cloudTrip1
+{
+    from {transform: translateX(-100px) scale(0.2);
+        visibility: visible;}
+    to {transform: translateX(800px) scale(0.2);}
+}
+
+@keyframes cloudTrip2
+{
+    from {transform: translateX(-100px) scale(0.3) scale(-1, 1);
+        visibility: visible;}
+    to {transform: translateX(800px) scale(0.3) scale(-1, 1);}
+}
+
+@keyframes cloudTrip3
+{
+    from {transform: translateX(-100px) scale(0.4);
+        visibility: visible;}
+    to {transform: translateX(800px) scale(0.4);}
+}
+
+@keyframes cloudTrip4
+{
+    from {transform: translateX(-100px) scale(0.5) scale(-1, 1);
+        visibility: visible;}
+    to {transform: translateX(800px) scale(0.5) scale(-1, 1);}
+}
+
+
+.cloud-1
+{
+    animation: cloudTrip1 34s linear infinite;
+    visibility: hidden;
+    animation-delay: 23s;  
+}
+
+.cloud-2
+{
+    animation: cloudTrip2 19s linear infinite;
+    visibility: hidden;
+    animation-delay: 15s;
+}
+
+.cloud-3
+{
+    animation: cloudTrip3 16s linear infinite;
+    visibility: hidden;
+    animation-delay: 9s;    
+}
+
+.cloud-4
+{ 
+    animation: cloudTrip4 24s linear infinite;
+    visibility: hidden;
+    animation-delay: 2s;    
+}

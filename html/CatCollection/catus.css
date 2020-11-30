@@ -1,0 +1,314 @@
+body{
+    background-color: rgb(236, 236, 236);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 5vw;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5vw;
+    padding: 1.5vw;
+    border-top: 1px solid gray;
+    font-size: 1vw;
+    background-color: rgb(236, 236, 236);;
+}
+
+main{
+    display: flex;
+    width: 100%;
+    margin-bottom: 7vw;
+}
+
+aside{
+    background-color: gainsboro;
+    width: 15%;
+    overflow: hidden;
+}
+
+
+
+                                                /* CENTER BLOCK with images of cats(and connected stuff)*/
+
+.catblocks{
+    order: 1;
+    display: grid;
+    width: 80%;
+    padding: 0 2%;
+    grid-template-areas: 
+                        "a b b"
+                        "c d e"
+                        "f f g"
+                        "h h h";
+    column-gap: 1%;
+    row-gap: 0.7%;
+    overflow: hidden;
+}
+
+.catblocks > div{
+    line-height: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+span{
+    position: absolute;
+    line-height: 1;
+    left: -40px;
+    bottom: 4vw;
+    opacity: 0;
+    background-color: rgb(75, 75, 75);
+    color: white;
+    padding: 2%;
+    
+    font-size: 2vw;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+.catblocks div:nth-of-type(1){
+    grid-area: a;
+}
+
+.catblocks div:nth-of-type(2){
+    grid-area: b;
+}
+
+.catblocks div:nth-of-type(3){
+    grid-area: c;
+}
+
+.catblocks div:nth-of-type(4){
+    grid-area: d;
+}
+
+.catblocks div:nth-of-type(5){
+    grid-area: e;
+}
+
+.catblocks div:nth-of-type(6){
+    grid-area: f;
+}
+
+.catblocks div:nth-of-type(7){
+    grid-area: g;
+}
+
+.catblocks div:nth-of-type(8){
+    grid-area: h;
+}
+
+.catblocks div:hover{
+    opacity: 0.97;
+}
+
+.catblocks div:hover span{
+    opacity: 0.7;
+    transition-property: all;
+    transition-duration: 1s;
+    transform: translateX(40px);
+}
+
+
+                                                    /* BREED and everything connected with it(buttons, selection...)*/
+
+
+.breed div{
+    width: 100%;
+    padding-left: 0.3vw;
+    line-height: 2;
+    font-size: 2vw;
+    border-bottom: 1px solid gray;
+    cursor: pointer;    
+}
+
+.breed div:hover{
+    background-color: grey;
+}
+
+main > input{
+   display: none;
+}
+
+main > input:checked ~ article div{
+    opacity: 0.5;
+}
+
+#ServalID:checked ~ .catblocks .ServalCat{
+    opacity: 1;
+}
+
+#ManulID:checked ~ .catblocks .ManulCat{
+    opacity: 1;
+}
+
+#BirmaID:checked ~ .catblocks .BirmaCat{
+    opacity: 1;
+}
+
+#OrientalID:checked ~ .catblocks .OrientalCat{
+    opacity: 1;
+}
+
+#ServalID:checked ~ .breed label[for="ServalID"] div{
+    background-color: rgb(71, 70, 70);
+}
+
+#ManulID:checked ~ .breed label[for="ManulID"] div{
+    background-color: rgb(71, 70, 70);
+}
+
+#BirmaID:checked ~ .breed label[for="BirmaID"] div{
+    background-color: rgb(71, 70, 70);
+}
+
+#OrientalID:checked ~ .breed label[for="OrientalID"] div{
+    background-color: rgb(71, 70, 70);
+}
+
+
+
+
+
+                                                            /* RATING of CATS(and everything in that block)*/
+
+
+.rating{
+    order: 2;
+    align-self: flex-start;
+    font-size: 2vw;
+    display: grid;
+    grid-template-areas: "a a a"
+                         "b b c"
+                         "d d d";
+    align-items: start;
+    padding-left: 1vw;
+}
+
+.ratingHeader{
+    grid-area: a;
+    margin-bottom: -1vw;
+    color: red;
+}
+
+.ratingCats{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1vw;
+    font-size: 1.5vw;
+    grid-area: d;
+    align-items: stretch;
+}
+
+.ratingCats div{
+    order: var(--default);
+    position: relative;
+    margin-bottom: 2vw;
+}
+
+.rating > .decreasing{
+    grid-area: b;
+    font-size: 1vw;
+    text-align: right;
+    padding-right: 1px;
+}
+
+.rating > input{
+    grid-area: c;
+    width: 1.3vw;
+    height: 1.3vw;
+    align-self: baseline;
+    margin: 0;
+}
+
+#catListID:checked + .ratingCats div{
+    order: var(--quality);
+}
+
+
+                                                        /* CATS with the nice colored bars */
+
+.Manul::before{
+    position:absolute;
+    top: 2.1vw;
+    left:0;
+    width:70%;
+    height: 1.5vw;
+    border: 0.5px solid green;
+    background: linear-gradient(to right, rgb(9, 112, 9), rgb(241, 237, 237));
+    content:"";
+}
+
+.Manul::after{
+    position:absolute;
+    top: 1.6vw;
+    right: 0.5vw;    
+    content:"10";
+}
+
+.Oriental::before{
+    position:absolute;
+    top: 2.1vw;
+    left:0;
+    width:28%;
+    height: 1.5vw;
+    border: 0.5px solid red;
+    background: linear-gradient(to right,red, rgb(241, 237, 237));
+    content:"";
+}
+
+.Oriental::after{
+    position:absolute;
+    top: 1.6vw;
+    right: 0.5vw;    
+    content:"4";
+}
+
+.Serval::before{
+    position:absolute;
+    top: 2.1vw;
+    left:0;
+    width:49%;
+    height: 1.5vw;
+    border: 0.5px solid yellowgreen;
+    background: linear-gradient(to right, yellowgreen, rgb(241, 237, 237));
+    content:"";
+}
+
+.Serval::after{
+    position:absolute;
+    top: 1.6vw;
+    right: 0.5vw;    
+    content:"7";
+}
+
+.Birma::before{
+    position:absolute;
+    top: 2.1vw;
+    left:0;
+    width:35%;
+    height: 1.5vw;
+    border: 0.5px solid yellow;
+    background: linear-gradient(to right, yellow, rgb(241, 237, 237));
+    content:"";
+}
+
+.Birma::after{
+    position:absolute;
+    top: 1.6vw;
+    right: 0.5vw;    
+    content:"5";
+}

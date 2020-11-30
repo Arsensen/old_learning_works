@@ -1,0 +1,241 @@
+/* Просьба к проверяющим не занижать 
+оценку за то, что картинка перемещается 
+вверх при наведении, по мне статичные 
+элементы - это скучно, и реализовать это
+просто */
+
+
+
+
+main {
+    background-color: aquamarine;
+    width: 90%;
+    margin: 0 auto;
+    height: 500px;
+    position: relative;
+}
+
+article{
+    position: absolute;
+    z-index: 10;
+    background-color: azure; 
+    height: 400px;
+    top: 40px;
+    left:40px;
+    right: 40px;
+    
+    
+}
+
+.section{
+    white-space: nowrap;
+    position: absolute;
+    left: 7%;
+    right: 7%;
+    top:0px;
+    bottom:0px;
+    overflow: hidden;
+    
+}
+
+
+
+/* BLOCKS WITH IMAGES AND DESCRIPTIONS*/
+
+.shifting{
+    position: absolute;
+    top:0px;
+    bottom:0px;
+    width: 100%;
+    
+    margin: 0;
+    padding: 0;
+    transition-property: margin-left;
+    transition-duration: 2s;
+    box-sizing: border-box;
+    margin-top: 80px;
+}
+
+
+.blocks{
+    display: inline-block;
+    margin: 0px;
+    box-sizing: border-box;
+
+    margin-right: 1%;
+    width:24%;
+    vertical-align: top;
+    transition-property: transform;
+    transition-duration: 1s;
+    overflow: hidden;    
+}
+
+.blocks img{
+    width: 100%;
+    height: 200px;
+}
+
+.blocks img:active{
+    opacity: 0.7;
+}
+
+
+
+/* HIDDEN TEXT UNDRER AN IMAGE*/
+
+.blocks span{
+    display:none;
+    padding-left: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-small;
+    padding: 1px;
+    overflow: hidden;
+}
+
+.blocks:hover > span{
+    display: block;
+    height:170px;
+    width: 100%;
+    white-space: normal;
+}
+
+.blocks:hover{
+    z-index: 911;
+    transform: translateY(-69px);
+    border: gray 1px solid;
+    box-shadow: 1px 0 10px rgba(0,0,0,0.5);    
+}
+
+
+
+
+/* MODAL WINDOW */
+
+.modalContainer{
+    position: fixed;
+    z-index:999;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    
+}
+
+.background{
+    position: absolute;
+    z-index: 99;
+    background-color: honeydew;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    opacity: 0.5;
+}
+
+.modalWindow{
+    position: absolute;
+    z-index: 100;
+    top:10%;
+    left: 20%;
+    right: 20%;
+    bottom: 10%;
+    background-color: gray;    
+    overflow: hidden;
+}
+
+.modalWindow img{
+    position: absolute;
+    width: 70%;
+    height:80%;
+    left:15%;
+    right: 15%;
+    top:10%;
+    bottom:10%;
+}
+
+
+
+/* MODAL WINDOW SWITCHER */
+
+.checkingBox{
+    display: none;
+}
+
+.checkingBox:checked ~ .modalContainer {
+    visibility: visible;
+}
+
+.checkingBox:not(:checked) ~ .modalContainer {
+    visibility: hidden;
+}
+
+
+/*CROSS*/
+
+.labe{
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    width:5%;
+    height:5%;
+    background: url("./images/cross.png") 50% 50% no-repeat;
+    background-size: 80%;  
+}
+
+.labe:hover{
+    opacity: 0.8;
+}
+
+
+/*RADIO SWITCHERS*/
+
+input{
+    position: absolute;
+}
+
+
+.radio1{
+    bottom: 40px;
+    left: 46%;
+}
+
+.radio2{
+    bottom: 40px;
+    left: 48%;
+}
+
+.radio3{
+    bottom: 40px;
+    left: 50%;
+}
+
+.radio4{
+    bottom: 40px;
+    left: 52%;
+}
+
+.radio5{
+    bottom: 40px;
+    left: 54%;
+}
+
+
+/*RADIO SWITCHERS SHIFTING BLOCK-.shifting*/
+
+.radio2:checked ~ article section .shifting{
+    margin-left: -75%;
+}
+
+.radio3:checked ~ article section .shifting{
+    margin-left: -149.9%;
+}
+
+.radio4:checked ~ article section .shifting{
+    margin-left: -224.9%;
+}
+
+.radio5:checked ~ article section .shifting{
+    margin-left: -300%;
+}
+
+

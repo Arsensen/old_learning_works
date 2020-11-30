@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Layout</title>
+</head>
+<body>
+    <main>    
+        <section class="logo">
+            <figure class="logo-figure"><div class="yandex">Яндекс</div><div>авто</div></figure>
+        </section>
+
+        <section class="slider">
+            <input type="radio" name="slider-butt" id="left-slide">
+            <input type="radio" name="slider-butt" id="right-slide">
+            <input type="radio" name="slider-butt" id="middle-slide" checked>
+            <label for="left-slide" class="left-slide-class label"><div class="arrow">‹</div></label>
+            <label for="right-slide" class="right-slide-class label" ><div class="arrow2">›</div></label>
+            <label for="middle-slide" class="middle-slide-class label"></label>
+
+            <article class="slide-wrapper">
+                <article class="slide-block">
+                    <div class="slide-1">
+                        <span class="slide-1-text slide-text">Увлекательные поломки после окончания гарантии &mdash; гарантированы!&raquo;</span>
+                        <figure class='car-1'><img src="./images/newCar.png" alt="Cars"></figure>
+                    </div><!--
+                --><div class="slide-2">
+                        <span class="slide-2-text slide-text">Хозяйственный мужчина ищет надежную красавицу для прогулок по бездорожью. Полный привод обязателен&raquo;</span>
+                        <figure class='car-1'><img src="./images/newCar.png" alt="Cars"></figure>
+                    </div><!--
+                --><div class="slide-3">
+                        <span class="slide-3-text slide-text">Пересядь с иглы мужcкого одобрения в новый седан&raquo;</span>
+                        <figure class='car-1'><img src="./images/newCar.png" alt="Cars"></figure>  
+                    </div>
+                </article>
+            </article>
+        </section>
+
+        <section class="video">
+            <input type="checkbox" name="poster-destroyer" id="poster-vanishing-button">
+            <label for="poster-vanishing-button" class="button-video"></label>
+            <video src="./videos/How-to-make.mp4" poster="./images/video-poster.png" controls></video>
+            <div class="poster-before">Яндекс.Авто за минуту</div>
+            <div class="poster"></div>
+        </section>
+
+        <section class="choice">
+            <h2 class="choice-header">Простой способ выбрать автомобиль</h2>
+            <article class="choice-block-container">
+                <div class="first-block choice-block">
+                    <div class="first-picture choice-picture"><span class="icon-basic-1"></span><span class="icon-basic-2"></span></div>
+                    <div class="choice-block-head">Каталог</div>
+                    <div class="choice-block-description">Самый большой каталог с описанием автомобилей от современных &mdash; до 20 лет назад</div>
+                </div>
+                <div class="second-block choice-block">
+                    <div class="second-picture choice-picture"><span class="icon2-basic-1"></span><span class="icon2-basic-2"></span></div>
+                    <div class="choice-block-head">Поиск</div>
+                    <div class="choice-block-description">Возможность искать по большему числу параметров, чем где бы то ни было</div>
+                </div>
+                <div class="third-block choice-block">
+                    <div class="third-picture choice-picture">
+                        <div class="icon3-round round1"><span class="icon3-basic-1"></span><span class="icon3-basic-2"></span></div>
+                        <div class="icon3-round round2"><span class="icon3-basic-round2-1"></span><span class="icon3-basic-round2-2"></span></div>
+                        <div class="icon3-round round3"><span class="icon3-basic-round3-1"></span><span class="icon3-basic-round3-2"><div class="icon3-additional-element2"></div><div class="icon3-addition-element"></div></span></div>
+                    </div>
+                    <div class="choice-block-head">Выборки автомобилей</div>
+                    <div class="choice-block-description">Выборки автомобилей в зависимости от ваших потребностей: "семейный", "для города", "для путешествий"</div>
+                </div>
+                <div class="forth-block choice-block">
+                    <div class="forth-picture choice-picture"><span class="forth-picture-block">ДЖИП, <mark class="yellow-text">ДО 5 ЛЕТ</mark></span></div>
+                    <div class="choice-block-head">Простой язык</div>
+                    <div class="choice-block-description">Возможность описания характеристик простым языком, понятным неискушенному пользователю</div>
+                </div>
+            </article>
+        </section>
+
+        <section class="buttons">
+            <h2 class="butt-head">Выбирайте. Находите. Заводите!</h2>
+            <button class="buttons-button">Попробовать!</button>
+        </section>
+    </main>
+</body>
+</html>
